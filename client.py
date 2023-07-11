@@ -157,7 +157,7 @@ def send_messages(sock):
 def connect_to_server(room_id):
     global username
     global public_key
-    server_address = ('192.168.1.35', 1234)
+    server_address = ('localhost', 1234)
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         sock.connect(server_address)

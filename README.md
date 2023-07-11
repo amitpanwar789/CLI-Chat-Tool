@@ -22,6 +22,11 @@ CLI Chat Tool is a command-line based chat application that allows users to comm
 
 5. Start exchanging messages with other users in the room.
 
+Default -
+host = 'localhost'
+port = 1234
+Replace the host ip address in client.py and server.py file.
+
 ## Architecture
 
 The CLI Chat Tool consists of two main components:
