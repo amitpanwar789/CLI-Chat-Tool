@@ -2,6 +2,7 @@ import base64
 import socket
 import threading
 import sys
+import time
 import colorama
 import json
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
@@ -59,14 +60,14 @@ def generate_private_public_key():
 
 
 def print_simple_message(message, sender_username):
-    print(f"{sender_username}:{message}")
-    print(colorama.Fore.GREEN + username + colorama.Fore.RESET, end='')
+    print(colorama.Fore.GREEN + sender_username+':' + colorama.Fore.RESET, end='')
+    print(message)
 
 
 def print_message(message, sender_username):
     global username
     print(f"{sender_username}{message}")
-    print(colorama.Fore.GREEN + username + colorama.Fore.RESET, end='')
+
 
 
 def receive_messages(sock):
@@ -143,7 +144,7 @@ def encrypt_message(sock, message):
 def send_messages(sock):
     global finished
     while not finished:
-        print(colorama.Fore.GREEN + username + colorama.Fore.RESET, end='')
+        #print(colorama.Fore.GREEN + username + colorama.Fore.RESET, end='')
         message = input()
         mes = message
         encrypt_message(sock, message)
@@ -156,7 +157,7 @@ def send_messages(sock):
 def connect_to_server(room_id):
     global username
     global public_key
-    server_address = ('192.168.1.36', 1234)
+    server_address = ('192.168.1.35', 1234)
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         sock.connect(server_address)
@@ -173,6 +174,7 @@ def connect_to_server(room_id):
         username = f"@{username}:"
 
         # Create and send the public key message
+        time.sleep(1)
         send_public_key(sock)
 
         receive_thread = threading.Thread(target=receive_messages, args=(sock,))

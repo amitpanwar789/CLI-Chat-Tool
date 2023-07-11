@@ -82,7 +82,7 @@ def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Define the host and port on which the server will listen
-    host = '192.168.1.36'
+    host = '192.168.1.35'
     port = 1234
 
     # Bind the socket to the host and port
@@ -100,6 +100,7 @@ def start_server():
 
             # Receive the client room name and username
             initial_data = client_socket.recv(1024).decode()
+            print(initial_data)
             initial_data = json.loads(initial_data)
             if initial_data.get("Message_type") != MESSAGE_TYPE_JOIN_ROOM:
                 continue
@@ -128,7 +129,7 @@ def start_server():
     finally:
         print("Shutting down server.")
         server_socket.close()
-        sys.exit(0)
+        
 
 # Start the server
 start_server()
