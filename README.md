@@ -18,11 +18,13 @@ CLI Chat Tool is a command-line based chat application that allows users to comm
 
 1. Start the server by running `server.py` script:
 2. Connect to the server and join a room by running `client.py` script:
-3. Replace `<room_id>` with the desired room ID and `<username>` with your desired username. - python3 client.py <room_id> <username>
-
+3. Replace `<room_id>` with the desired room ID and `<username>` with your desired username.
+4. python3 client.py <room_id> <username>
 5. Start exchanging messages with other users in the room.
 6. To send message Press Ctrl+G (Not Enter)
-7. To leave Chat type "exit()"
+7. To exit the chat room, a client can simply type exit() as a message.
+
+***Note:*** Make sure to run the client script on different machines or use different terminal windows with different log_file to simulate multiple clients.
 
 ## Default 
 - host = 'localhost'
