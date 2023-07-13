@@ -12,7 +12,7 @@ CLI Chat Tool is a command-line based chat application that allows users to comm
 ## Prerequisites
 
 - Python 3.x
-- Additional Python libraries: `colorama`, `cryptography`
+- Additional Python libraries: `colorama`, `cryptography`,`curses`
 
 ## Usage
 
@@ -21,11 +21,13 @@ CLI Chat Tool is a command-line based chat application that allows users to comm
 3. Replace `<room_id>` with the desired room ID and `<username>` with your desired username. - python3 client.py <room_id> <username>
 
 5. Start exchanging messages with other users in the room.
+6. To send message Press Ctrl+G (Not Enter)
+7. To leave Chat type "exit()"
 
-Default -
-host = 'localhost'
-port = 1234
-Replace the host ip address in client.py and server.py file.
+## Default 
+- host = 'localhost'
+- port = 1234
+- Replace the host ip address in client.py and server.py file.
 
 ## Architecture
 
@@ -34,4 +36,7 @@ The CLI Chat Tool consists of two main components:
 - **Server**: The server component (`server.py`) is responsible for accepting incoming connections from clients, managing rooms, and broadcasting messages to all clients in a room.
 
 - **Client**: The client component (`client.py`) allows users to connect to the server, join a specific room, and exchange messages with other users in the same room.
+
+# Contributing
+Contributions to this project are welcome! Feel free to open issues and submit pull requests to improve the application.
 
