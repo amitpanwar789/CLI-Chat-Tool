@@ -82,7 +82,7 @@ def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Define the host and port on which the server will listen
-    host = '192.168.1.37'
+    host = '0.0.0.0'
     port = 1234
 
     # Bind the socket to the host and port
